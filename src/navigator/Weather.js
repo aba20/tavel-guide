@@ -1,0 +1,35 @@
+// import React, { Component } from 'react';
+// import axios from 'axios';
+
+// class Weather extends Component {
+
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             cityWeather: []
+//         }
+//     }
+
+//     componentDidMount() {
+//         axios.get('http://api.openweathermap.org/data/2.5/weather?q=Nice&APPID=b835bb88562f14c7a763f8e2e693411a')
+//             .then(res => {
+//                 cityWeather: res.data.main.temp - 273.15;
+//             })
+//             .catch(err => {
+//                 console.log(err);
+//             });
+//     }
+
+
+//     render() {
+
+
+//         return (
+//             <div>
+//                 {cityWeather}
+
+//             </div>
+//         )
+//     };
+// }
+// export default Weather;
