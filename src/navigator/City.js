@@ -1,17 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 
-const City = props => {
+class City extends Component {
+    render(){
     return(
      <div className="column">
-         {props.printPhoto}
-        <h1>{props.name}</h1>
+         {this.props.printPhoto}
+        <h1>{this.props.name}</h1>
        
         <h5>France</h5>
-        <p>{props.snippet}</p> 
-        <p>{props.printWeather} ºC </p>
+        <p>{this.props.snippet}</p> 
+        <p>{this.props.printWeather} ºC </p>
     </div>
     )
+    }
 }
 
 export default City;
