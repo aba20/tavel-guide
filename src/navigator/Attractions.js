@@ -11,11 +11,12 @@ import City from './City';
 
 class Attractions extends Component {
 
-
     constructor(props) {
         super(props);
         this.state = {
-            cityName: []
+            cityName: [],
+            cityWeather: [],
+            printWeather:[]
         }
 
     }
@@ -27,17 +28,43 @@ class Attractions extends Component {
                 this.setState({
                     cityName: res.data.results
                 })
+                this.getWeather()
             })
             .catch(err => {
                 console.log(err);
             });
+
+
+            
+    }
+
+    getWeather = () => {
+
+        this.state.cityName.map((item, i)=> {
+
+            axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${item.name}&APPID=b835bb88562f14c7a763f8e2e693411a`)
+            .then(res => {
+                this.setState({
+                    printWeather: res.data.main.temp - 273.15
+                }) 
+                this.setState({
+                    cityWeather: [...this.state.cityWeather, this.state.printWeather]
+                })
+                console.log();
+                
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        } )
     }
     render() {
         console.log(this.state.cityName)
+        console.log(this.state.cityWeather);
+        
         const cityLoop = this.state.cityName.map((item, index) => {
             return (
-                <City/>
-
+                <City name={item.name} snippet={item.snippet} key={index} />
             )
         });
 
@@ -45,6 +72,8 @@ class Attractions extends Component {
         return (
             <div className='row'>
                 {cityLoop}
+
+                {this.state.printWeather}
             </div>
 
         )

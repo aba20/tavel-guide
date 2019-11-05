@@ -2,14 +2,13 @@ import React from 'react';
 
 
 const City = props => {
-        <div className='column' key={index}>
-                    <div>
-                    <h1>{item.name}</h1>
-                    <h5>France</h5>
-                    </div>
-                    <p>{item.snippet}</p>
-                </div>
-    return {cityLoop}
+    return(
+     <div className="column">
+        <h1>{props.name}</h1>
+        <h5>France</h5>
+        <p>{props.snippet}</p>
+    </div>
+    )
 }
 
 export default City;
