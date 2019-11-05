@@ -10,7 +10,7 @@ class Photos extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://api.unsplash.com/search/photos/?query=office&client_id=34f1e88073a5b17fd090cb0cd2ec8a8d4e067b0b3214ce3e34452efc8d448872')
+        axios.get('https://pixabay.com/api/?key=14172593-bc3af3ba1e2e832408b48aaa2&q=Riyadh&image_type=photo')
             .then(res => {
                 this.setState({
                     cityPhoto: res.data.urls.small
