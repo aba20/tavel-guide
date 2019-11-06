@@ -38,10 +38,10 @@ class AboutUs extends Component{
     return(
       <div>
         <h1>About Us</h1>
-        <p>We are do the second project of SEI </p>
+        <p>This was made for propject two</p>
 
         <h2>Contact</h2>
-        <p>You can reach us at this page or this email: example@email.com</p>
+        <p>You can reach us at <a href='./errors.js'>this page</a> or this email: example@email.com</p>
         <h2> feedback</h2>
         <p><input type='text' placeholder='Write your feedback' value={this.state.newfeedback} name='newfeedback' onChange={this.handleInputChange}/></p>
         <p><button className="btn btn-lg btn-primary" onClick={this.handleClick}>Send Feedback</button></p>
