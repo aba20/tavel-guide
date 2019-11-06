@@ -15,10 +15,13 @@ class Attractions extends Component {
         super(props);
         this.state = {
             cityName: [],
+
             cityWeather: [],
             printWeather: [],
+
             cityPhoto: [],
-            printPhoto: []
+            printPhoto: [],
+            cityLoop:[],
         }
     }
 
@@ -30,6 +33,7 @@ class Attractions extends Component {
                     cityName: res.data.results
                 })
                 this.getWeather()
+                this.getPhoto()
             })
             .catch(err => {
                 console.log(err);
@@ -42,12 +46,11 @@ class Attractions extends Component {
             axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${item.name}&APPID=b835bb88562f14c7a763f8e2e693411a`)
                 .then(res => {
                     this.setState({
-                        printWeather: res.data.main.temp - 273.15
+                        printWeather: Math.round(res.data.main.temp - 273.15),
+                        cityWeather: [...this.state.cityWeather, this.state.printWeather],
+                        cityLoop:[...this.state.cityLoop, <City name={item.name} snippet={item.snippet} key={i} printWeather={Math.round(res.data.main.temp - 273.15)} />],
                     })
-                    this.setState({
-                        cityWeather: [...this.state.cityWeather, this.state.printWeather]
-                    })
-                    console.log();
+                    // console.log();
 
                 })
                 .catch(err => {
@@ -56,16 +59,25 @@ class Attractions extends Component {
         })
     }
     getPhoto = () => {
-        this.state.cityPhoto.map((item, i) => {
+        // console.log("ddddddd");
+        // console.log(this.state.cityPhoto);
+        // console.log(this.state.cityName);
+        
+        this.state.cityName.map((item, i) => {
+
             axios.get(`https://pixabay.com/api/?key=14172593-bc3af3ba1e2e832408b48aaa2&q=${item.name}&image_type=photo`)
                 .then(res => {
+                    console.log(res.data.hits[0].webformatURL);
+                    
+                    // this.setState({
+                    //     printPhoto: res.data.hits[0].webformatURL
+                    // })
                     this.setState({
-                        printPhoto: res.data.hits.previewURL
+                        // cityPhoto: [...this.state.cityPhoto, this.state.printPhoto],
+                        // cityLoop:[...this.state.cityLoop, <City name={item.name} snippet={item.snippet} key={i} printPhoto={res.data.hits[0].webformatURL}/>],
+                        cityPhoto: [...this.state.cityPhoto, res.data.hits[0].webformatURL]
                     })
-                    this.setState({
-                        cityPhoto: [...this.state.cityPhoto, this.state.printPhoto]
-                    })
-                    console.log();
+                    // console.log();
                 })
                 .catch(err => {
                     console.log(err);
@@ -75,22 +87,20 @@ class Attractions extends Component {
 
 
     render() {
-        console.log(this.state.cityName)
-        console.log(Math.round(this.state.cityWeather));
+        // console.log(this.state.cityWeather);
         console.log(this.state.cityPhoto);
-
 
 
         const cityLoop = this.state.cityName.map((item, index) => {
             const temp = this.state.cityWeather[index]
             const photo = this.state.cityPhoto[index]
 
-            console.log(this.state.cityWeather[index])
-            console.log(this.state.cityPhoto[index])
-            console.log('index', index);
+            // console.log(this.state.cityWeather[index])
+            console.log(photo)
+            // console.log('index', index);
 
             return (
-                <City name={item.name} snippet={item.snippet} key={index} printWeather={temp} printPhoto={photo} />
+                <City  name={item.name} printPhoto={photo} snippet={item.snippet} key={index} printWeather={temp}  />
             )
         });
 

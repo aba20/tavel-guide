@@ -4,6 +4,8 @@ import Home from "./navigator/Home";
 import Attractions from "./navigator/Attractions";
 import AboutUs from "./navigator/AboutUs";
 import Errors from "./navigator/Errors";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
@@ -12,11 +14,13 @@ class App extends Component{
   render() {
     return(
     <Router>
-      <nav>
-        <Link to="/">Home</Link>{'    '}
-        <Link to="/attractions">Attractions</Link>{'   '}
-        <Link to="/aboutus">AboutUs</Link>
+
+      <nav className="navbar navbar-dark bg-dark">
+         <Link className="flex-sm-fill text-sm-center nav-link active" to="/"> Home </Link> 
+         <Link className="flex-sm-fill text-sm-center nav-link" to="/attractions"> Attractions </Link>
+         <Link className="flex-sm-fill text-sm-center nav-link" to="/aboutus"> About Us </Link>
       </nav>
+ 
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />

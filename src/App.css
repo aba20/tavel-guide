@@ -2,7 +2,7 @@
   text-align: center;
   /* background: #2e2c26; */
 }
-
+/* 
 .row {
   display: flex;
   flex-direction: row;
@@ -10,8 +10,11 @@
   align-items: center;
   width: 100%;
 }
-
-.column {
+*/
+.card {
+width: 18rem;
+}
+  /*
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -23,4 +26,4 @@
   width: 25%;
   background-color: #ddd;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-}
+} */
