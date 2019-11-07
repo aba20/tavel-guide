@@ -17,6 +17,14 @@ https://wireframe.cc/fmcRUq
 3. Booking for trips.
 4. User review on cities.
 
+# Tools used:
+1. CSS
+2. React
+3. Bootstrap
+4. API
+5. JS
+
+
 # React:
 I used react app to make compoenets and there are many components made to make the webpage more flixlable.
 I used three differnet apis for weather city infos, and photos.
