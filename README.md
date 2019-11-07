@@ -1,5 +1,7 @@
 # Travel Guide:
 This page provieds a brife content about some cities in France which will give you name, snippet and photos.
+
+
 # Framework:
 https://wireframe.cc/fmcRUq
 
@@ -9,6 +11,11 @@ https://wireframe.cc/fmcRUq
 2. Home page and About us page.
 3. Feedback page 
 
+# Next Step in Future:
+1. Find api that shows more cities and countries
+2. Galary in homepage.
+3. Booking for trips.
+4. User review on cities.
 
 # React:
 I used react app to make compoenets and there are many components made to make the webpage more flixlable.
