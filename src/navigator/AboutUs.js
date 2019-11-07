@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 
 
+
 class AboutUs extends Component{
   constructor(props){
     super(props)
     this.state = {
       feedback: [],
       newfeedback: "",
-      delFeedback: []
     }
 
   }
@@ -27,15 +27,17 @@ class AboutUs extends Component{
     })
   }
   delItem(e){
+   
+    let feed = [...this.state.feedback]
+    let i = feed.indexOf(e)
+    feed.splice(i,1)
 
-    const rmv = this.state.feedback.filter((newfeedback) =>{
-      return newfeedback != e 
-    });
-    this.setState({ newItem: this.state.delFeedback})  
+    
+    this.setState({ feedback: feed})  
 }
 
   render () {
-    console.log(this.state);
+
     
     const feedback = this.state.feedback.map(item => {
       return (
