@@ -11,7 +11,7 @@ https://wireframe.cc/fmcRUq
 2. Home page and About us page.
 3. Feedback page 
 
-# Next Step in Future:
+# Next Step:
 1. Find api that shows more cities and countries
 2. Galary in homepage.
 3. Booking for trips.
