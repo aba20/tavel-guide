@@ -16,6 +16,7 @@ https://wireframe.cc/fmcRUq
 2. Galary in homepage.
 3. Booking for trips.
 4. User review on cities.
+5. Search for a city or catagorie ex. 'Beach'.
 
 # Tools used:
 1. CSS
