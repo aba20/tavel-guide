@@ -31,7 +31,7 @@ class AboutUs extends Component{
     const rmv = this.state.feedback.filter((newfeedback) =>{
       return newfeedback != e 
     });
-    this.setState({ newItem: this.delFeedback})  
+    this.setState({ newItem: this.state.delFeedback})  
 }
 
   render () {
