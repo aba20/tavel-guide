@@ -14,12 +14,9 @@ class App extends Component{
   render() {
     return(
     <Router>
-
-      <nav className="navbar navbar-dark bg-dark">
-         <Link className="flex-sm-fill text-sm-center nav-link active" to="/"> Home </Link> 
-         <Link className="flex-sm-fill text-sm-center nav-link" to="/attractions"> Attractions </Link>
-         <Link className="flex-sm-fill text-sm-center nav-link" to="/aboutus"> About Us </Link>
-      </nav>
+      
+     <nav><Link className="flex-sm-fill text-sm-center nav-link active" to="/"> Home </Link> </nav>
+    
  
       <div className="App">
         <Switch>
