@@ -15,6 +15,9 @@ I used react app to make compoenets and there are many components made to make t
 I used three differnet apis for weather city infos, and photos.
 I used Router to like the pages.
 
+# Bootstrap:
+I used it for bar navigation styling and attractoins component to style them in little squares 
+
 # Favourit part:
 I liked how compoenet can be used in many uses or pages that you like. Also APIs save me a lot of time, so I do not have to write or search cities photos.
 
