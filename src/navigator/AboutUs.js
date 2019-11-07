@@ -27,7 +27,7 @@ class AboutUs extends Component{
     })
   }
   delItem(e){
-   
+   //this is to delete invdivdually from the original one techinqly
     let feed = [...this.state.feedback]
     let i = feed.indexOf(e)
     feed.splice(i,1)

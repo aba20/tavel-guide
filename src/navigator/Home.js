@@ -5,7 +5,7 @@ import '/Users/mac/Desktop/sei/projects/project #2/travel_guid/src/App.css'
 class Home extends Component {
   render(){
   return (
-
+//this is navigation bar uses bootstap library
     
     <div className='homebg'>
    

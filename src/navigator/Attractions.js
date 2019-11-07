@@ -14,7 +14,7 @@ class Attractions extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = {// this is to store states in so we could use data
             cityName: [],
 
             cityWeather: [],
@@ -27,6 +27,7 @@ class Attractions extends Component {
     }
 
     componentDidMount() {
+
         axios.get('https://www.triposo.com/api/20190906/location.json?part_of=France&tag_labels=city&count=10&order_by=-score&fields=name,id,snippet,parent_id,score,type')
             .then(res => {
 
@@ -40,9 +41,9 @@ class Attractions extends Component {
                 console.log(err);
             });
     }
-
+ // so this is would take the weather get it to the first api where name are showing
     getWeather = () => {
-        this.state.cityName.map((item, i) => {
+        this.state.cityName.map((item, i) => {//this api bring names and snippets of french cities
 
             axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${item.name}&APPID=b835bb88562f14c7a763f8e2e693411a`)
                 .then(res => {
@@ -59,6 +60,7 @@ class Attractions extends Component {
                 });
         })
     }
+     // so this function is would take the photo get it to the first api where name are showing
     getPhoto = () => {
         // console.log("ddddddd");
         // console.log(this.state.cityPhoto);
@@ -100,7 +102,7 @@ class Attractions extends Component {
             console.log(photo)
             // console.log('index', index);
 
-            return (
+            return (//city would bring the print format from city compoenet 
                 <City  name={item.name} printPhoto={photo} snippet={item.snippet} key={index} printWeather={temp}  />
             )
         });

@@ -5,7 +5,7 @@ import Attractions from "./navigator/Attractions";
 import AboutUs from "./navigator/AboutUs";
 import Errors from "./navigator/Errors";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+// here is navigaiotn component 
 
 import { BrowserRouter as HashRouter, Route, Link, Switch } from "react-router-dom";
 
