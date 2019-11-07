@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  /* background: #2e2c26; */
+
 }
 /* 
 .row {
@@ -30,6 +30,7 @@ width: 18rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
   }
   .homebg{
     align-content: center;

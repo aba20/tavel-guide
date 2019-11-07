@@ -7,13 +7,13 @@ import Errors from "./navigator/Errors";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as HashRouter, Route, Link, Switch } from "react-router-dom";
 
 class App extends Component{
 
   render() {
     return(
-    <Router>
+    <HashRouter baseline="\">
       
      <nav><Link className="flex-sm-fill text-sm-center nav-link active" to="/"> Home </Link> </nav>
     
@@ -26,7 +26,7 @@ class App extends Component{
           <Route component={Errors} />
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
     )};
 }
 
